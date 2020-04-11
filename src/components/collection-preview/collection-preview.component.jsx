@@ -10,8 +10,8 @@ const CollectionPreview = ({ title, items }) => (
       {//use filter to limit items to 4 on the page
       items
         .filter((item, idx) => idx < 4)
-        .map(({ id, ...otherItemProps }) => (
-          <CollectionItem key={id} {...otherItemProps} />
+        .map(( item ) => (
+          <CollectionItem key={item.id} item={item} />
         ))}
     </div>
   </div>
