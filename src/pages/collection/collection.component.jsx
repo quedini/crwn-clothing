@@ -11,10 +11,16 @@ import {
 import "./collection.styles.scss";
 
 const CollectionPage = ({ collection }) => {
+  const { title, items } = collection;
   console.log(collection);
   return (
-    <div className="collection">
-      <h2>{collection.title.toUpperCase()} Page </h2>
+    <div className="collection-page">
+      <h2 className="title">{title} </h2>
+      <div className="items">
+        {items.map((item) => (
+          <CollectionItem key={item.id} item={item} />
+        ))}
+      </div>
     </div>
   );
 };
